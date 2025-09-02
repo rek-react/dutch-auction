@@ -1,0 +1,312 @@
+{
+  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "abi": [
+    {
+      "type": "constructor",
+      "stateMutability": "undefined",
+      "payable": false,
+      "inputs": []
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "AuctionCreated",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "index",
+          "indexed": false
+        },
+        {
+          "type": "tuple",
+          "name": "prize",
+          "indexed": false,
+          "components": [
+            {
+              "type": "address",
+              "name": "nftAddress"
+            },
+            {
+              "type": "uint256",
+              "name": "tokenId"
+            },
+            {
+              "type": "string",
+              "name": "tokenURI"
+            }
+          ]
+        },
+        {
+          "type": "uint256",
+          "name": "startPrice",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "duration",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "AuctionEnded",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "index",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "finalPrice",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "buyer",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "Refund",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "index",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "buyer",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "refund",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "auctions",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "address",
+          "name": "seller"
+        },
+        {
+          "type": "uint256",
+          "name": "startPrice"
+        },
+        {
+          "type": "uint256",
+          "name": "finalPrice"
+        },
+        {
+          "type": "uint256",
+          "name": "startAt"
+        },
+        {
+          "type": "uint256",
+          "name": "endAt"
+        },
+        {
+          "type": "uint256",
+          "name": "discountRate"
+        },
+        {
+          "type": "uint256",
+          "name": "duration"
+        },
+        {
+          "type": "tuple",
+          "name": "prize",
+          "components": [
+            {
+              "type": "address",
+              "name": "nftAddress"
+            },
+            {
+              "type": "uint256",
+              "name": "tokenId"
+            },
+            {
+              "type": "string",
+              "name": "tokenURI"
+            }
+          ]
+        },
+        {
+          "type": "bool",
+          "name": "stopped"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "buy",
+      "constant": false,
+      "stateMutability": "payable",
+      "payable": true,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "_index"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "createAuction",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "_startPrice"
+        },
+        {
+          "type": "uint256",
+          "name": "_duration"
+        },
+        {
+          "type": "address",
+          "name": "_nftAddress"
+        },
+        {
+          "type": "uint256",
+          "name": "_tokenId"
+        },
+        {
+          "type": "string",
+          "name": "_tokenURI"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "getAuctionPrice",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "_index"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getAuctions",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "tuple[]",
+          "name": "",
+          "components": [
+            {
+              "type": "address",
+              "name": "seller"
+            },
+            {
+              "type": "uint256",
+              "name": "startPrice"
+            },
+            {
+              "type": "uint256",
+              "name": "finalPrice"
+            },
+            {
+              "type": "uint256",
+              "name": "startAt"
+            },
+            {
+              "type": "uint256",
+              "name": "endAt"
+            },
+            {
+              "type": "uint256",
+              "name": "discountRate"
+            },
+            {
+              "type": "uint256",
+              "name": "duration"
+            },
+            {
+              "type": "tuple",
+              "name": "prize",
+              "components": [
+                {
+                  "type": "address",
+                  "name": "nftAddress"
+                },
+                {
+                  "type": "uint256",
+                  "name": "tokenId"
+                },
+                {
+                  "type": "string",
+                  "name": "tokenURI"
+                }
+              ]
+            },
+            {
+              "type": "bool",
+              "name": "stopped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "withdrawFunds",
+      "constant": false,
+      "stateMutability": "payable",
+      "payable": true,
+      "inputs": [],
+      "outputs": []
+    }
+  ]
+}
