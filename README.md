@@ -7,7 +7,7 @@ A decentralized Dutch auction platform for NFTs built with **Hardhat**, **TypeSc
 ### Root Directory
 
 ```
-auction/
+dutch-auction/
 ├── artifacts/                 # Compiled contract artifacts
 ├── cache/                    # Hardhat compilation cache
 ├── contracts/                # Solidity smart contracts
