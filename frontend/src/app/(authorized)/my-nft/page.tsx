@@ -3,7 +3,6 @@
 import {
   Button,
   EmptyState,
-  Image,
   Modal,
   NFTForm,
   NFTItem,

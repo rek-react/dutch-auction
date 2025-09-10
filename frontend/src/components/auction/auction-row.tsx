@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button, Image, TableCell, TableRow, Typography } from "../ui";
 import { Auction } from "@/types";
-import { useAccount, useBalance, useWriteContract } from "wagmi";
+import { useAccount, useWriteContract } from "wagmi";
 import {
   copyToClipboard,
   formatEth,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Modal, ModalProps, Typography } from "../ui";
+import { Image, Modal, ModalProps } from "../ui";
 
 interface ImageModalProps extends ModalProps {
   src: string;

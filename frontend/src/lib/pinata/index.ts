@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosError, AxiosInstance } from "axios";
 
 class PinataClient {
   private axiosInstance: AxiosInstance;
@@ -27,8 +27,12 @@ class PinataClient {
       );
 
       return `ipfs://${res.data.IpfsHash}`;
-    } catch (error: any) {
-      console.error(error.response);
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("Axios error:", error.message);
+      } else {
+        console.error("Unknown error:", error);
+      }
       return null;
     }
   }
